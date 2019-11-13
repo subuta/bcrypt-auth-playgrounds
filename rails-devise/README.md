@@ -1,24 +1,42 @@
-# README
+# rails-devise example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### How to setup server
 
-Things you may want to cover:
+```
+# Run build
+docker-compose build
 
-* Ruby version
+# Start server
+docker-compose up
 
-* System dependencies
+# Connect into Rails container
+docker-compose exec web bash
 
-* Configuration
+# Setup database
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
-* Database creation
+### Try Devise auth.
 
-* Database initialization
+```
+# Open public page
+open http://localhost:3000 
 
-* How to run the test suite
+# Open protected page
+open http://localhost:3000/protected
 
-* Services (job queues, cache servers, search engines, etc.)
+# Sign-in by browser (email: "hoge@piyo.com", pass: "password")
+open http://localhost:3000/users/sign_in
+```
 
-* Deployment instructions
+### How to play
 
-* ...
+```
+# Install dependencies
+npm i
+
+# Authenticate against devise user from Node.js scripts.
+npm run auth
+```

@@ -1,5 +1,13 @@
 {
   "name": "myapp",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "auth": "node -r esm ./auth.js"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "esm": "^3.2.25",
+    "knex": "^0.20.1",
+    "pg": "^7.12.1"
+  }
 }
