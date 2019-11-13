@@ -27,7 +27,6 @@ docker-compose up
 docker-compose exec web ash
 
 # Setup database
-rake db:create
-rake db:migrate
-rake db:seed
+php artisan migrate:fresh
+php artisan db:seed
 ```

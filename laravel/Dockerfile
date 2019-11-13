@@ -1,9 +1,11 @@
 FROM php:alpine
 
 # SEE: https://gitlab.com/crocodile2u/laravel-docker/blob/master/docker/php/dev.Dockerfile
-RUN apk add --no-cache $PHPIZE_DEPS && \
-    pecl install xdebug && docker-php-ext-enable xdebug && \
-    docker-php-ext-install pdo_mysql
+RUN apk add --no-cache \
+    $PHPIZE_DEPS \
+    postgresql-dev \
+    && pecl install xdebug && docker-php-ext-enable xdebug \
+    && docker-php-ext-install pdo_pgsql
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
