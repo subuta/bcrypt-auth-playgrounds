@@ -1,8 +1,16 @@
 # rails-devise example
 
+SEE: https://docs.docker.com/compose/rails/
+
 ### How to setup server
 
 ```
+# Starts from project root.
+cd rails-devise
+
+# Initialize Rails project, Already done this for you :)
+# docker-compose run web rails new . --force --no-deps --database=postgresql
+
 # Run build
 docker-compose build
 
